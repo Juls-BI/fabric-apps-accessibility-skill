@@ -1,5 +1,14 @@
 # Building accessible Fabric Apps
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Targets WCAG 2.2 AA (not a conformance claim)](https://img.shields.io/badge/WCAG-2.2%20AA%20target-1f6feb.svg)](https://www.w3.org/TR/WCAG22/)
+[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-SKILL.md-6f42c1.svg)](building-accessible-fabric-apps/SKILL.md)
+[![Works with GitHub Copilot](https://img.shields.io/badge/works%20with-GitHub%20Copilot-24292f.svg)](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
+[![Works with Claude](https://img.shields.io/badge/works%20with-Claude-d97757.svg)](https://code.claude.com/docs/en/skills)
+[![Microsoft Fabric Apps (preview)](https://img.shields.io/badge/Microsoft%20Fabric%20Apps-preview-0f7b6c.svg)](https://learn.microsoft.com/en-us/fabric/apps/overview)
+[![Tests: 13 of 13 with the skill, 5 of 13 without](https://img.shields.io/badge/tests-13%2F13%20with%20skill%20vs%205%2F13%20without-2da44e.svg)](docs/benchmark-round-3.md)
+[![Last commit](https://img.shields.io/github/last-commit/Juls-BI/fabric-apps-accessibility-skill.svg)](https://github.com/Juls-BI/fabric-apps-accessibility-skill/commits/main)
+
 An Agent Skill that makes coding agents such as **GitHub Copilot** and **Claude** build **Microsoft Fabric Apps** (Rayfin SDK, the data app template, React front ends over semantic models) **accessible by default**, to WCAG 2.2 AA.
 
 A Fabric App is a standard web application. Unlike a Power BI report, there is no managed canvas providing the keyboard model, focus handling or screen reader support, so every requirement has to be met in the code. When AI agents write that code, the accessibility rules need to be in their instructions from the start. This skill puts them there.
