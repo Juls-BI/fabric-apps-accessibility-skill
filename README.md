@@ -1,12 +1,14 @@
 # Building accessible Fabric Apps
 
-An Agent Skill that makes Claude build **Microsoft Fabric Apps** (Rayfin SDK, the data app template, React front ends over semantic models) **accessible by default**, to WCAG 2.2 AA.
+An Agent Skill that makes coding agents such as **GitHub Copilot** and **Claude** build **Microsoft Fabric Apps** (Rayfin SDK, the data app template, React front ends over semantic models) **accessible by default**, to WCAG 2.2 AA.
 
 A Fabric App is a standard web application. Unlike a Power BI report, there is no managed canvas providing the keyboard model, focus handling or screen reader support, so every requirement has to be met in the code. When AI agents write that code, the accessibility rules need to be in their instructions from the start. This skill puts them there.
 
+Agent Skills is an open format, so the same skill folder works in GitHub Copilot (agent mode in VS Code, the Copilot CLI and the Copilot cloud agent), Claude Code and the Claude apps.
+
 ## What it does
 
-Once installed, Claude loads the skill for any UI work in a Fabric App or Rayfin project, including requests that never mention accessibility ("add a KPI row", "build the sales page"). It then:
+Once installed, the agent loads the skill for any UI work in a Fabric App or Rayfin project, including requests that never mention accessibility ("add a KPI row", "build the sales page"). It then:
 
 - builds charts with accessible names, takeaway summaries and data table alternatives
 - makes cross-highlighting chart points keyboard-operable controls with their selected state exposed
@@ -22,11 +24,13 @@ It also audits existing Fabric App views.
 
 ## Install
 
+**GitHub Copilot:** copy the [`building-accessible-fabric-apps`](building-accessible-fabric-apps) folder into your Fabric App project at `.github/skills/` and commit it, so everyone working on the app gets it. For yourself only, use `~/.copilot/skills/`. In VS Code, type `/skills` in chat to check that it's listed. See the [VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills) and [GitHub](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/create-skills) docs.
+
+**Claude Code:** copy the same folder to `.claude/skills/` in the project, or `~/.claude/skills/` for yourself.
+
 **Claude (web or desktop):** download [`building-accessible-fabric-apps.skill`](building-accessible-fabric-apps.skill) and upload it under Settings > Capabilities > Skills. Organisation admins can share it with everyone.
 
-**Claude Code:** copy the [`building-accessible-fabric-apps`](building-accessible-fabric-apps) folder to `~/.claude/skills/` (personal) or `.claude/skills/` in a project.
-
-**GitHub Copilot and other agents:** paste [`assets/agent-instructions-accessibility.md`](building-accessible-fabric-apps/assets/agent-instructions-accessibility.md) into the project's `.github/copilot-instructions.md`.
+**Always-on rules (any agent):** a skill loads only when the agent decides the task needs it. To make the core rules apply to every request as well, paste [`assets/agent-instructions-accessibility.md`](building-accessible-fabric-apps/assets/agent-instructions-accessibility.md) into the project's `.github/copilot-instructions.md` or `AGENTS.md`. The skill offers to do this the first time it runs.
 
 ## Contents
 
@@ -41,7 +45,7 @@ It also audits existing Fabric App views.
 
 ## Test results
 
-Three realistic tasks, each run with and without the skill and graded against pass/fail checks on the code itself. Two of the tasks never mention accessibility.
+Three realistic tasks, each run in Claude with and without the skill and graded against pass/fail checks on the code itself. Two of the tasks never mention accessibility.
 
 | Task | Round 1: with / without | Round 2: with / without |
 |---|---|---|
@@ -52,7 +56,7 @@ Three realistic tasks, each run with and without the skill and graded against pa
 
 Round 2 added checks for reduced motion and high contrast and made the audit harder. With the skill, runs take about twice as long because they also write accessibility tests and a WCAG-mapped report. Full numbers are in [docs/benchmark-round-2.md](docs/benchmark-round-2.md).
 
-These are code-level checks from a single run per task, not a substitute for testing with real assistive technology users. Nothing here is a WCAG conformance claim.
+The tests haven't been run in GitHub Copilot yet. The skill uses no Claude-specific features, but results may differ with other agents and models. These are code-level checks from a single run per task, not a substitute for testing with real assistive technology users. Nothing here is a WCAG conformance claim.
 
 ## Background
 
