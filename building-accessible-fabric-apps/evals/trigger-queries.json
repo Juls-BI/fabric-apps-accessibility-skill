@@ -18,5 +18,6 @@
   {"query": "react-native-windows: my custom control isn't exposed to Narrator with the new Fabric renderer, how do I implement the UIA provider?", "should_trigger": false},
   {"query": "make an Excel chart of monthly sales from Q3.xlsx with a colourblind-safe palette", "should_trigger": false},
   {"query": "explain the difference between Rayfin, Fabric Apps and Power Apps for a blog post I'm writing", "should_trigger": false},
-  {"query": "npx rayfin up fails with 'Fabric deployments require authentication to be enabled', what do I change in rayfin.yml?", "should_trigger": false}
+  {"query": "npx rayfin up fails with 'Fabric deployments require authentication to be enabled', what do I change in rayfin.yml?", "should_trigger": false},
+  {"query": "using VegaVisual from @microsoft/fabric-visuals, add a stacked column chart of orders by channel to the overview page of our fabric app", "should_trigger": true}
 ]

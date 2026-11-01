@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: fabric-components-view
+expected_outcome: |
+  React/TypeScript files that keep the built-in accessibility of the Fabric visual components: every VegaVisual and the DataGrid have a header title, with a takeaway in chart subtitles; charts are not wrapped in role="img" or aria-hidden and get no custom keyboard handling; the "Show as a table" option is kept even though the user asked for no card frame; ImageCell alt text describes each product; column reordering has a non-drag alternative or is turned off; grid headers are readable; the theme comes from useCssTheme; loading and error states are announced; and the charts still get the plain look the user asked for, by restyling the frame rather than removing it.

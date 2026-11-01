@@ -11,6 +11,7 @@ Agent Skills is an open format, so the same skill folder works in GitHub Copilot
 Once installed, the agent loads the skill for any UI work in a Fabric App or Rayfin project, including requests that never mention accessibility ("add a KPI row", "build the sales page"). It then:
 
 - builds charts with accessible names, takeaway summaries and data table alternatives
+- uses the accessibility built into Microsoft's Fabric visual components (`VegaVisual`, `DataGrid`) rather than replacing or hiding it
 - makes cross-highlighting chart points keyboard-operable controls with their selected state exposed
 - keeps focus visible, handles focus and page titles on view changes, and keeps sticky headers from hiding focus
 - announces loading, empty, saved and error states through live regions that are always on the page
@@ -38,6 +39,7 @@ It also audits existing Fabric App views.
 |---|---|
 | `building-accessible-fabric-apps/SKILL.md` | Workflow and rules |
 | `building-accessible-fabric-apps/references/patterns.md` | React/TypeScript and CSS patterns, Playwright and axe-core checks |
+| `building-accessible-fabric-apps/references/fabric-components.md` | Using Microsoft's Fabric visual components (`VegaVisual`, `VisualContainer`, `DataGrid`) without breaking their built-in accessibility |
 | `building-accessible-fabric-apps/references/wcag-checklist.md` | WCAG 2.2 criteria mapped to data app components |
 | `building-accessible-fabric-apps/assets/agent-instructions-accessibility.md` | Rules block for agent instruction files |
 | `building-accessible-fabric-apps/evals/` | Test cases and trigger queries |
@@ -56,11 +58,19 @@ Three realistic tasks, each run in Claude with and without the skill and graded 
 
 Round 2 added checks for reduced motion and high contrast and made the audit harder. With the skill, runs take about twice as long because they also write accessibility tests and a WCAG-mapped report. Full numbers are in [docs/benchmark-round-2.md](docs/benchmark-round-2.md).
 
+Round 3 tested a page built with Microsoft's Fabric visual components (`VegaVisual` and `DataGrid`), where the user also asks for charts without the card frame:
+
+| Task | Round 3: with / without |
+|---|---|
+| Build a product performance page with Fabric visual components | 13/13 vs 5/13 |
+
+Without the skill, the agent guessed the components' settings and hid both charts from screen readers, which removes their built-in keyboard navigation and table view. With the skill, it kept those features and still gave the user the plain look they asked for. Full numbers are in [docs/benchmark-round-3.md](docs/benchmark-round-3.md).
+
 The tests haven't been run in GitHub Copilot yet. The skill uses no Claude-specific features, but results may differ with other agents and models. These are code-level checks from a single run per task, not a substitute for testing with real assistive technology users. Nothing here is a WCAG conformance claim.
 
 ## Background
 
-Fabric Apps and the data app template are in preview, so details may change. The guidance draws on the WCAG 2.2 Understanding documents and the Microsoft Learn documentation for Fabric Apps.
+Fabric Apps and the data app template are in preview, so details may change. The guidance draws on the WCAG 2.2 Understanding documents, the Microsoft Learn documentation for Fabric Apps and the public npm documentation for Microsoft's Fabric visual components.
 
 ## License
 

@@ -1,6 +1,6 @@
 ---
 name: building-accessible-fabric-apps
-description: Default way to write UI code for Microsoft Fabric Apps - Rayfin SDK projects, the data app (dataapp) template and their React/TypeScript front ends over semantic models. Builds every view, chart, KPI card, filter, slicer, data grid, dialog and cross-highlighting interaction accessible by default (WCAG 2.2 AA keyboard and focus, screen reader names, status announcements, contrast in light and dark themes, text resizing, reflow, reduced motion, high contrast), adds axe-core checks to the template's Playwright browser validation, and writes accessibility rules into copilot-instructions.md. Use it for any front-end or UI change in a Fabric App or Rayfin project (signs - rayfin.yml, @microsoft/rayfin packages, the dataapp template), even when the request never mentions accessibility, and for accessibility audits of such apps. Not for Power BI reports, backend-only Rayfin configuration or deployment, or React Native.
+description: Default way to write UI code for Microsoft Fabric Apps - Rayfin SDK projects, the data app (dataapp) template and their React/TypeScript front ends over semantic models. Builds every view, chart, KPI card, filter, slicer, data grid, dialog and cross-highlighting interaction accessible by default (WCAG 2.2 AA keyboard and focus, screen reader names, status announcements, contrast in light and dark themes, text resizing, reflow, reduced motion, high contrast), adds axe-core checks to the template's Playwright browser validation, and writes accessibility rules into copilot-instructions.md. Use it for any front-end or UI change in a Fabric App or Rayfin project (signs - rayfin.yml, @microsoft/rayfin or @microsoft/fabric-visuals packages, the dataapp template), even when the request never mentions accessibility, and for accessibility audits of such apps. Not for Power BI reports, backend-only Rayfin configuration or deployment, or React Native.
 ---
 
 # Building accessible Fabric Apps
@@ -25,7 +25,7 @@ Accessibility progress:
 Before editing, find out what the template already gives you, because its components decide how much you need to add:
 
 - Read the repository's agent instructions and skills (for example `copilot-instructions.md`). If there is no accessibility section, offer to add the one in [assets/agent-instructions-accessibility.md](assets/agent-instructions-accessibility.md) so every later agent session gets the same rules.
-- Identify the chart library behind the visual primitives and check its accessibility support. Don't assume it is accessible by default.
+- Identify the chart library behind the visual primitives and check its accessibility support. Don't assume it is accessible by default. If the project uses Microsoft's Fabric visual components (`@microsoft/fabric-visuals`, `@microsoft/fabric-datagrid`), read [references/fabric-components.md](references/fabric-components.md) first: they have keyboard navigation and a table view built in, and the rules there take precedence over the generic chart patterns.
 - Find the data grid, the cell renderers, the central theme or style file, and the existing browser-validation workflow (the data app template ships a Playwright-based one).
 
 ### 2. Build with the rules
@@ -76,6 +76,7 @@ Use [references/wcag-checklist.md](references/wcag-checklist.md) to map each fin
 - Reuse the semantic model's format strings in accessible names and tables, so a screen reader hears "$1,500.50", not "1500.5".
 - Don't rely on colour alone to distinguish series or states (1.4.1). Add direct labels, markers or patterns, and keep the legend text.
 - Series colours, chart gridlines that carry meaning, focus indicators and input borders need 3:1 against adjacent colours (1.4.11). Check both themes; a palette that passes in light often fails in dark.
+- For `VegaVisual` charts and `DataGrid`, follow [references/fabric-components.md](references/fabric-components.md) instead of the two `role="img"` and `role="group"` rules above: always give them a `header` title with the takeaway in the subtitle, keep their frame (restyle it with `containerClassName` if the user wants a plain look, rather than using `chromeless`), and don't wrap them or add your own keyboard handling.
 
 ### Text
 

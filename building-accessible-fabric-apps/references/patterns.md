@@ -16,6 +16,8 @@ React and TypeScript patterns for the rules in SKILL.md. Adapt names to the proj
 
 ## Static chart with a text alternative
 
+For charts you draw yourself (SVG, D3 or another chart library). For `VegaVisual` from `@microsoft/fabric-visuals`, don't use this pattern; see [fabric-components.md](fabric-components.md).
+
 ```tsx
 <figure>
   <div role="img" aria-label={`${title}. ${summary}`}>
