@@ -1,5 +1,6 @@
 # Building accessible Fabric Apps
 
+[![Latest release](https://img.shields.io/github/v/release/Juls-BI/fabric-apps-accessibility-skill.svg)](https://github.com/Juls-BI/fabric-apps-accessibility-skill/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Targets WCAG 2.2 AA (not a conformance claim)](https://img.shields.io/badge/WCAG-2.2%20AA%20target-1f6feb.svg)](https://www.w3.org/TR/WCAG22/)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-SKILL.md-6f42c1.svg)](building-accessible-fabric-apps/SKILL.md)
@@ -38,7 +39,7 @@ It also audits existing Fabric App views.
 
 **Claude Code:** copy the same folder to `.claude/skills/` in the project, or `~/.claude/skills/` for yourself.
 
-**Claude (web or desktop):** download [`building-accessible-fabric-apps.skill`](building-accessible-fabric-apps.skill) and upload it under Settings > Capabilities > Skills. Organisation admins can share it with everyone.
+**Claude (web or desktop):** download `building-accessible-fabric-apps.skill` from the [latest release](https://github.com/Juls-BI/fabric-apps-accessibility-skill/releases/latest) and upload it under Settings > Capabilities > Skills. Organisation admins can share it with everyone.
 
 **Always-on rules (any agent):** a skill loads only when the agent decides the task needs it. To make the core rules apply to every request as well, paste [`assets/agent-instructions-accessibility.md`](building-accessible-fabric-apps/assets/agent-instructions-accessibility.md) into the project's `.github/copilot-instructions.md` or `AGENTS.md`. The skill offers to do this the first time it runs.
 
