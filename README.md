@@ -24,6 +24,7 @@ Once installed, the agent loads the skill for any UI work in a Fabric App or Ray
 - makes cross-highlighting chart points keyboard-operable controls with their selected state exposed
 - keeps focus visible, handles focus and page titles on view changes, and keeps sticky headers from hiding focus
 - announces loading, empty, saved and error states through live regions that are always on the page
+- writes plain-language labels and full column headers instead of semantic model field names and abbreviations
 - sizes text in rem and keeps grids, cards and tooltips readable at 200% text and with WCAG text spacing
 - checks contrast in light and dark themes, and supports reduced motion and Windows High Contrast
 - adds axe-core checks to the template's Playwright browser validation

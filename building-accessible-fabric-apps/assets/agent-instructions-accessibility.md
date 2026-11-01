@@ -5,6 +5,7 @@ This app must meet WCAG 2.2 AA. Apply these rules to every change:
 - Use native HTML elements first (button, a, table, select, label); use ARIA only when no native element fits.
 - Give every chart an accessible name, a takeaway summary and a data table alternative. Don't put role="img" on a chart whose points are focusable; make the points keyboard-operable controls instead.
 - Use the semantic model format strings in accessible names and data tables.
+- Write plain-language labels for column headers, axis titles, filters and cards instead of semantic model field names, and don't abbreviate column headers.
 - Never rely on colour alone. Keep 4.5:1 contrast for text (including chart labels) and 3:1 for series colours and focus indicators, in light and dark themes.
 - Size text in rem. Don't use fixed heights or overflow: hidden on text containers.
 - Every interaction works with a keyboard, with a visible focus indicator and no keyboard traps. Tooltips also open on focus and close with Escape.

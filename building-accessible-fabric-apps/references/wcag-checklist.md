@@ -18,6 +18,7 @@ Use this to map findings to success criteria. Each criterion links to its W3C Un
 | 2.1.2 No Keyboard Trap (no-keyboard-trap) | A | Focus can always leave charts, grids and dialogs | Keyboard only |
 | 2.4.2 Page Titled (page-titled) | A | `document.title` updates for each view | Inspect title after navigation |
 | 2.4.3 Focus Order (focus-order) | A | Focus moves to the new view's heading; dialogs return focus | Keyboard only |
+| 2.4.6 Headings and Labels (headings-and-labels) | AA | Column headers, axis titles, filters and cards use descriptive labels, not semantic model field names or abbreviations | Read every header and label aloud |
 | 2.4.7 Focus Visible (focus-visible) | AA | Visible focus indicator on every focusable element | Keyboard, both themes |
 | 2.4.11 Focus Not Obscured (Minimum) (focus-not-obscured-minimum) | AA | Sticky headers and panels never completely hide the focused element | Tab through with sticky elements in view |
 | 2.5.7 Dragging Movements (dragging-movements) | AA | Single-pointer alternative for any drag | Mouse without dragging |
@@ -34,4 +35,6 @@ Use this to map findings to success criteria. Each criterion links to its W3C Un
 | Item | Level | What it means in a data app | How to check |
 |---|---|---|---|
 | 2.3.3 Animation from Interactions (animation-from-interactions) | AAA | Spinners, transitions and animated highlights stop under `prefers-reduced-motion` | Playwright `reducedMotion: 'reduce'` |
+| 3.1.4 Abbreviations (abbreviations) | AAA | Acronyms and abbreviations are spelled out where they first appear | Read visible text |
+| 3.1.5 Reading Level (reading-level) | AAA | Plain language, no business jargon in labels and summaries | Read visible text |
 | Windows High Contrast (forced colors) | Not a WCAG criterion | Bars, selection and focus stay visible when the system forces colours; report failures under 1.4.11 or 2.4.7 when they hide content or focus | Playwright `forcedColors: 'active'`; Windows contrast themes |

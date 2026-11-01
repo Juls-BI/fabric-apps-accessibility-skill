@@ -142,7 +142,7 @@ const columns: GridColumnDef[] = [
 />
 ```
 
-- **Headers become labels.** Sort buttons and filter menus are named from the column header ("Sort by Revenue"), so write headers people understand, not field names like `rev_amt`. When the data is a `DataTable`, set `displayName` on its columns.
+- **Headers become labels.** Sort buttons and filter menus are named from the column header ("Sort by Revenue"), so write headers people understand, in full, not field names or abbreviations like `rev_amt` or "GM%" (2.4.6). When the data is a `DataTable`, set `displayName` on its columns.
 - **`ImageCell` needs real alt text.** The preview button and the preview dialog are both named from `alt`, so here `alt` is not decorative: describe the image. The README example uses `alt="thumbnail"`, which gives every row the same name; don't copy it.
 - **Dragging needs an alternative (2.5.7).** Column resizing and reordering are documented as drag interactions. If users need them, add a single-pointer alternative (for example a column settings dialog with move up/down buttons and width options) and apply the result through `columns`. If they don't need them, turn them off with `disableColumnResize` and `disableColumnReorder`.
 - **Give the grid a header** so it has a name, like a chart.

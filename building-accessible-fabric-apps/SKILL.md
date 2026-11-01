@@ -85,6 +85,12 @@ Use [references/wcag-checklist.md](references/wcag-checklist.md) to map each fin
 - Don't give text containers fixed heights or clip text with `overflow: hidden`. Data grid rows, KPI cards, tooltips and axis labels must survive the text-spacing overrides in 1.4.12 without losing content.
 - If an SVG chart scales with its container, make sure its labels don't shrink below a readable size at narrow widths.
 
+### Labels and wording
+
+- Turn semantic model field names into plain labels for column headers, axis titles, legends, filters and cards ("Sales last year", not `SalesAmt_LY`). Labels must describe their purpose (2.4.6).
+- Don't abbreviate column headers. If a header must be short to fit, keep the full name available to assistive technologies, for example in the accessible name or a tooltip that keyboard users can also open.
+- Use plain language in visible text, and avoid business jargon and acronyms. Where an acronym is the term people know, spell it out the first time it appears. This goes beyond AA (3.1.4 and 3.1.5 are AAA), so keep any label the user has explicitly asked for.
+
 ### Keyboard and focus
 
 - Everything that works with a mouse works with a keyboard (2.1.1), with no keyboard trap (2.1.2).
