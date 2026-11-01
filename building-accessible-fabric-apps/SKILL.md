@@ -5,7 +5,7 @@ description: Default way to write UI code for Microsoft Fabric Apps - Rayfin SDK
 
 # Building accessible Fabric Apps
 
-A Fabric App is a standard web application. Unlike a Power BI report, no managed canvas supplies the keyboard model, focus handling or screen reader support: every WCAG 2.2 AA requirement has to be met by the code you write. Apply the rules below while you generate code, not as a clean-up pass afterwards, because retrofitting focus order, live regions and accessible names into finished components is much harder than building them in.
+A Fabric App is a standard web application. Apply the rules below while you generate code, not as a clean-up pass afterwards, because retrofitting focus order, live regions and accessible names into finished components is much harder than building them in.
 
 ## Workflow
 
