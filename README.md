@@ -11,7 +11,7 @@
 
 An Agent Skill that makes coding agents such as **GitHub Copilot** and **Claude** build **Microsoft Fabric Apps** (Rayfin SDK, the data app template, React front ends over semantic models) **accessible by default**, to WCAG 2.2 AA.
 
-A Fabric App is a standard web application. Unlike a Power BI report, there is no managed canvas providing the keyboard model, focus handling or screen reader support, so every requirement has to be met in the code. When AI agents write that code, the accessibility rules need to be in their instructions from the start. This skill puts them there.
+A Fabric App is a standard web application, so every accessibility requirement has to be met in its code. When AI agents write that code, the accessibility rules need to be in their instructions from the start. This skill puts them there.
 
 Agent Skills is an open format, so the same skill folder works in GitHub Copilot (agent mode in VS Code, the Copilot CLI and the Copilot cloud agent), Claude Code and the Claude apps.
 
