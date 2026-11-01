@@ -26,7 +26,6 @@ Use this to map findings to success criteria. Each criterion links to its W3C Un
 | 3.3.2 Labels or Instructions (labels-or-instructions) | A | Visible labels on all inputs and filters | Inspect |
 | 3.3.3 Error Suggestion (error-suggestion) | AA | Errors suggest a correction where possible | Submit invalid data |
 | 3.3.7 Redundant Entry (redundant-entry) | A | Previously entered data is not asked for again in the same process | Walk through multi-step forms |
-| 3.3.8 Accessible Authentication (Minimum) (accessible-authentication-minimum) | AA | Applies to any verification step the app adds; Fabric SSO itself is outside the app | Check paste and password-manager support |
 | 4.1.2 Name, Role, Value (name-role-value) | A | Custom controls, cell renderers and chart points expose name, role, state | axe; accessibility tree |
 | 4.1.3 Status Messages (status-messages) | AA | Loading, empty, saved and error states announced without focus moving | Screen reader; check live regions exist before updates |
 

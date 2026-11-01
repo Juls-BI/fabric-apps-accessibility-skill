@@ -120,7 +120,3 @@ These go beyond AA, but each costs one media query and protects people who can't
 
 - Fabric Apps can write data. Every input has a visible label (3.3.2). Errors are identified in text and linked with `aria-describedby` and `aria-invalid` (3.3.1), with a suggested correction where possible (3.3.3).
 - Don't ask for information the user already entered in the same process (3.3.7).
-
-### Authentication
-
-Keep the template's Fabric SSO sign-in; don't build a separate sign-in flow. If you add any extra verification step, it must not depend on a cognitive function test such as remembering or transcribing a code unless copy and paste or a password manager can complete it (3.3.8).
