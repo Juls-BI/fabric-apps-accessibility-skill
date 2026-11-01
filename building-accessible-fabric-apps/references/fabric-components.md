@@ -18,7 +18,7 @@ Everything here comes from the packages' public READMEs and published code (vers
 
 | Component | Built in | What you still do |
 |---|---|---|
-| `VegaVisual` | Keyboard exploration of axes, data points and legend items; a framed container named by its header; a "Show as a table" dialog with the chart's data | Pass a header, keep the frame, don't hide or wrap the chart |
+| `VegaVisual` | Keyboard exploration of axes, data points and legend items (Vega-Lite specs only, not Flint); a framed container named by its header; a "Show as a table" dialog with the chart's data | Pass a header, keep the frame, don't hide or wrap the chart |
 | `VisualContainer` | Container keyboard modes, toolbar, overflow menu, "Show as a table" action | Supply the table source yourself |
 | `DataGrid` | Sort buttons with `aria-sort`, selection, expand and collapse labels, keyboard filter menus, labelled grand totals, image preview dialog | Write clear headers and alt text, offer alternatives to dragging |
 | Theme (`useCssTheme`) | Light and dark tokens; system colours in high contrast | Use the tokens, check custom palettes |
@@ -50,6 +50,14 @@ export function RevenueByRegion({ data }: { data: DataTable }) {
 - **Never wrap the chart in `role="img"` or `aria-hidden`.** The chart has its own keyboard exploration layer with focusable items. `role="img"` would hide those items from assistive technology. The `role="img"` pattern in [patterns.md](patterns.md) is for charts you draw yourself, not for `VegaVisual`.
 - **Don't add your own roving tabindex or key handlers to chart marks.** Keyboard entry is built in: Tab to the chart's frame, press Enter to explore, use arrow keys and Tab within a region, Enter to drill in, Escape to go back up and leave.
 - **Format values for the table.** "Show as a table" displays the source rows from the `data` prop. Pass data whose columns have clear display names and format strings, so the table reads as well as the chart.
+
+### Flint specs
+
+`VegaVisual` also accepts [Flint](https://microsoft.github.io/flint-chart/) specs (it treats a spec with top-level `chartType` and `encodings` as Flint). The header, the frame and the rules above apply to them in the same way, with one important difference: in the published 5.0.0 code, the keyboard exploration layer is only created for Vega-Lite specs, so a Flint chart can't be explored from the keyboard.
+
+- Prefer Vega-Lite for charts that people need to explore or interact with, such as charts with cross-highlighting or drill-down.
+- If you use Flint, keep the header and frame so the chart still has a name and the "Show as a table" view, and give any chart interaction (for example clicking a bar to filter) a keyboard alternative outside the chart, such as filter buttons.
+- Check the installed version: if its README says keyboard navigation covers Flint, this difference no longer applies.
 
 ### When the user wants no card frame
 
