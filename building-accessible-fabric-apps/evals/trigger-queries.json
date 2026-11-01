@@ -1,0 +1,22 @@
+[
+  {"query": "scaffold a new rayfin data app called sales-insights against our Finance semantic model and add a revenue trend chart plus a top 10 customers table", "should_trigger": true},
+  {"query": "in my fabric app the region bar chart should filter the grid when clicked, can you wire up the cross-highlighting? code is in src/visuals/RegionBars.tsx", "should_trigger": true},
+  {"query": "Add a KPI card row (Revenue, Units, Avg Price) to the dashboard view of our Fabric App. Use the format strings from the semantic model.", "should_trigger": true},
+  {"query": "copilot keeps generating div soup in our rayfin project, write the section for copilot-instructions.md on how components should be built", "should_trigger": true},
+  {"query": "build me a dark mode toggle for the fabric app we deployed with rayfin up last week", "should_trigger": true},
+  {"query": "our accessibility team flagged the Fabric app we built: the screen reader says nothing when filters change. fix src/views/Overview.tsx", "should_trigger": true},
+  {"query": "I want to turn this Power BI report page (sales by region map, monthly line chart, matrix of products) into a view in our Fabric App using the data app template", "should_trigger": true},
+  {"query": "add a modal that shows product details when you click a row in the data grid of our fabric data app (react/ts)", "should_trigger": true},
+  {"query": "the date slicer in our rayfin dataapp needs to become a range picker with presets: last 7 days, MTD, YTD", "should_trigger": true},
+  {"query": "write playwright tests for the browser validation of our rayfin app at mobile and desktop sizes", "should_trigger": true},
+  {"query": "help me write dynamic alt text with DAX measures for the visuals in my Power BI report so screen readers read the current values", "should_trigger": false},
+  {"query": "how do I set the tab order and layer order in the selection pane of my Power BI report? accessibility audit next week", "should_trigger": false},
+  {"query": "write a DAX measure for year-over-year revenue growth in our Sales semantic model, fiscal year starts in July", "should_trigger": false},
+  {"query": "where is the Fabric Apps (preview) tenant setting in the admin portal and can I enable it for one security group only?", "should_trigger": false},
+  {"query": "create a Fabric notebook that loads the CSVs from our lakehouse Files folder into delta tables", "should_trigger": false},
+  {"query": "audit our Next.js marketing site homepage for WCAG 2.2 AA issues, repo is at ~/code/marketing-site", "should_trigger": false},
+  {"query": "react-native-windows: my custom control isn't exposed to Narrator with the new Fabric renderer, how do I implement the UIA provider?", "should_trigger": false},
+  {"query": "make an Excel chart of monthly sales from Q3.xlsx with a colourblind-safe palette", "should_trigger": false},
+  {"query": "explain the difference between Rayfin, Fabric Apps and Power Apps for a blog post I'm writing", "should_trigger": false},
+  {"query": "npx rayfin up fails with 'Fabric deployments require authentication to be enabled', what do I change in rayfin.yml?", "should_trigger": false}
+]

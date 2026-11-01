@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: audit-existing-dashboard
+expected_outcome: |
+  A report listing the planted accessibility problems mapped to WCAG criteria, fixed versions of SalesDashboard.tsx and dashboard.css, and a note that screen reader testing by a person is still needed.
+context:
+  scaffold_script: place-files.sh

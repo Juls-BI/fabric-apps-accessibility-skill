@@ -1,0 +1,63 @@
+# Building accessible Fabric Apps
+
+An Agent Skill that makes Claude build **Microsoft Fabric Apps** (Rayfin SDK, the data app template, React front ends over semantic models) **accessible by default**, to WCAG 2.2 AA.
+
+A Fabric App is a standard web application. Unlike a Power BI report, there is no managed canvas providing the keyboard model, focus handling or screen reader support, so every requirement has to be met in the code. When AI agents write that code, the accessibility rules need to be in their instructions from the start. This skill puts them there.
+
+## What it does
+
+Once installed, Claude loads the skill for any UI work in a Fabric App or Rayfin project, including requests that never mention accessibility ("add a KPI row", "build the sales page"). It then:
+
+- builds charts with accessible names, takeaway summaries and data table alternatives
+- makes cross-highlighting chart points keyboard-operable controls with their selected state exposed
+- keeps focus visible, handles focus and page titles on view changes, and keeps sticky headers from hiding focus
+- announces loading, empty, saved and error states through live regions that are always on the page
+- sizes text in rem and keeps grids, cards and tooltips readable at 200% text and with WCAG text spacing
+- checks contrast in light and dark themes, and supports reduced motion and Windows High Contrast
+- adds axe-core checks to the template's Playwright browser validation
+- reports findings mapped to WCAG criteria, without claiming conformance from automated checks alone
+- offers to add an accessibility section to the project's `copilot-instructions.md`, so other agents follow the same rules
+
+It also audits existing Fabric App views.
+
+## Install
+
+**Claude (web or desktop):** download [`building-accessible-fabric-apps.skill`](building-accessible-fabric-apps.skill) and upload it under Settings > Capabilities > Skills. Organisation admins can share it with everyone.
+
+**Claude Code:** copy the [`building-accessible-fabric-apps`](building-accessible-fabric-apps) folder to `~/.claude/skills/` (personal) or `.claude/skills/` in a project.
+
+**GitHub Copilot and other agents:** paste [`assets/agent-instructions-accessibility.md`](building-accessible-fabric-apps/assets/agent-instructions-accessibility.md) into the project's `.github/copilot-instructions.md`.
+
+## Contents
+
+| Path | Purpose |
+|---|---|
+| `building-accessible-fabric-apps/SKILL.md` | Workflow and rules |
+| `building-accessible-fabric-apps/references/patterns.md` | React/TypeScript and CSS patterns, Playwright and axe-core checks |
+| `building-accessible-fabric-apps/references/wcag-checklist.md` | WCAG 2.2 criteria mapped to data app components |
+| `building-accessible-fabric-apps/assets/agent-instructions-accessibility.md` | Rules block for agent instruction files |
+| `building-accessible-fabric-apps/evals/` | Test cases and trigger queries |
+| `docs/` | Benchmark results |
+
+## Test results
+
+Three realistic tasks, each run with and without the skill and graded against pass/fail checks on the code itself. Two of the tasks never mention accessibility.
+
+| Task | Round 1: with / without | Round 2: with / without |
+|---|---|---|
+| Build a sales overview view | 9/9 vs 7/9 | 11/11 vs 7/11 |
+| Build a lightbox and sticky filter bar | 9/9 vs 8/9 | 11/11 vs 8/11 |
+| Audit an existing dashboard | 10/10 vs 10/10 | 17/17 vs 13/17 |
+| **Total** | **28/28 vs 25/28** | **39/39 vs 28/39** |
+
+Round 2 added checks for reduced motion and high contrast and made the audit harder. With the skill, runs take about twice as long because they also write accessibility tests and a WCAG-mapped report. Full numbers are in [docs/benchmark-round-2.md](docs/benchmark-round-2.md).
+
+These are code-level checks from a single run per task, not a substitute for testing with real assistive technology users. Nothing here is a WCAG conformance claim.
+
+## Background
+
+Fabric Apps and the data app template are in preview, so details may change. The guidance draws on the WCAG 2.2 Understanding documents and the Microsoft Learn documentation for Fabric Apps.
+
+## License
+
+[MIT](LICENSE)

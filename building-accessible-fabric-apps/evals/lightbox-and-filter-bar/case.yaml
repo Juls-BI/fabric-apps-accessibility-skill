@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: lightbox-and-filter-bar
+expected_outcome: |
+  A lightbox implemented as a labelled modal dialog that takes focus, closes with Escape and returns focus to the thumbnail, images with alt text, labelled dropdowns, a reset icon button with an accessible name and at least a 24 by 24 px target, and CSS that keeps focused elements from being hidden under the sticky bar.

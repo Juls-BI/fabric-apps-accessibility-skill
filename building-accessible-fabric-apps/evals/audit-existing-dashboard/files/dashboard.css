@@ -1,0 +1,25 @@
+* { outline: none; }
+
+body { font-size: 13px; color: #888; background: #fff; }
+
+.header.sticky { position: sticky; top: 0; height: 56px; background: #fafafa; z-index: 10; display: flex; align-items: center; gap: 12px; }
+.title { font-size: 20px; font-weight: 600; }
+
+.icon-btn { width: 16px; height: 16px; cursor: pointer; }
+
+.chart { display: flex; align-items: flex-end; gap: 8px; height: 220px; width: 900px; }
+.bar { width: 40px; cursor: pointer; transition: height 0.6s ease, opacity 0.3s; }
+.bar.selected { opacity: 1; }
+.bar:not(.selected) { opacity: 0.85; }
+.tooltip { position: absolute; font-size: 10px; background: #333; color: #555; padding: 2px 4px; }
+
+.legend .swatch { display: inline-block; width: 10px; height: 10px; margin-right: 4px; }
+
+.grid { width: 900px; }
+.grid-row { display: flex; height: 24px; overflow: hidden; }
+.grid-cell { flex: 1; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.grid-head .grid-cell { font-weight: 600; cursor: move; }
+
+.spinner { width: 24px; height: 24px; border: 3px solid #eee; border-top-color: #2196f3; border-radius: 50%; animation: spin 1s linear infinite; }
+.error-banner { color: #f44336; }
+@keyframes spin { to { transform: rotate(360deg); } }
