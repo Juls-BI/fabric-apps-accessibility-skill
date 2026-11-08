@@ -9,7 +9,7 @@
 [![Microsoft Fabric Apps (preview)](https://img.shields.io/badge/Microsoft%20Fabric%20Apps-preview-0f7b6c.svg)](https://learn.microsoft.com/en-us/fabric/apps/overview)
 
 
-An Agent Skill that makes coding agents such as **GitHub Copilot** and **Claude** build **Microsoft Fabric Apps** (Rayfin SDK, the data app template, React front ends over semantic models) **accessible by default**, to WCAG 2.2 AA.
+An Agent Skill that makes coding agents such build **Microsoft Fabric Apps** (Rayfin SDK, the data app template, React front ends over semantic models) **accessible by default**, to WCAG 2.2 AA.
 
 A Fabric App is a standard web application, so every accessibility requirement has to be met in its code. When AI agents write that code, the accessibility rules need to be in their instructions from the start. This skill puts them there.
 
